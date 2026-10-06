@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MealPlanner · Franciszek Kossut</title>
+<meta name="description" content="MealPlanner, an Android app for planning meals around what is in the fridge. React Native, TypeScript, Expo, SQLite.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/serif-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-name" href="/">Franciszek Kossut</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/#projects">Projects</a>
+      <a class="nav-extra" href="/#experience">Experience</a>
+      <a class="nav-extra" href="/#tools">Tools</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+    </button>
+    <a class="cv-button" href="/Franciszek_Kossut_CV.pdf" download title="PDF, 154 KB"><span class="cv-long">Download CV</span><span class="cv-short">CV</span><span class="mono">PDF</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="band">
+    <div class="wrap">
+      <a class="back" href="/#mealplanner">Back to projects</a>
+      <h1>MealPlanner</h1>
+      <p class="lead">An Android app I built to plan my meals around what is already in the fridge, and to shop only for what is missing.</p>
+    </div>
+  </section>
+
+  <section class="band band-alt" aria-label="Summary">
+    <div class="wrap">
+      <dl class="summary">
+        <dt>Role</dt><dd>Solo: planning, design, code and testing on my own phone</dd>
+        <dt>When</dt><dd>2026, still in use and in development</dd>
+        <dt>Size</dt><dd>10 screens, 150 built-in recipes, 1,829 more collected by my scraper</dd>
+        <dt>Tools</dt><dd><ul class="tags"><li>TypeScript</li><li>React Native</li><li>Expo</li><li>SQLite</li><li>AsyncStorage</li><li>Node.js</li><li>Python</li></ul></dd>
+        <dt>Links</dt><dd class="item-links flush"><a href="https://github.com/FearedLynx/MyFridgeApp">Code on GitHub</a></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap prose">
+      <h2>What it does</h2>
+      <ul>
+        <li><strong>Today's plan:</strong> breakfast, lunch, dinner and snack slots, a daily calorie goal and a view of the week.</li>
+        <li><strong>Browse:</strong> recipes filtered by meal time and tags such as vegetarian, high-protein or quick.</li>
+        <li><strong>Fridge:</strong> a list of what I have. The Cook tab then shows the recipes I can make right now, and the ones missing three ingredients or fewer.</li>
+        <li><strong>Voice input:</strong> I can say "I have eggs and milk but I ran out of flour" and the fridge list is updated in both directions.</li>
+        <li><strong>Shopping list:</strong> the missing ingredients for the meals I planned.</li>
+        <li><strong>Cook mode:</strong> step by step, split into preparing, cooking and assembling.</li>
+      </ul>
+      <figure class="shot">
+        <img src="/img/mealplanner-home.webp" width="600" height="1333" alt="MealPlanner home screen: calories eaten today, the week, and empty meal slots for breakfast, lunch, dinner and snack." loading="lazy">
+        <figcaption>The home screen on my phone.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band band-alt">
+    <div class="wrap prose">
+      <h2>How it works</h2>
+      <h3>Matching recipes to the fridge</h3>
+      <p>Ingredient names never match exactly ("fresh chopped parsley" against "parsley"), so the matcher strips filler words and compares the remaining core words. Substitution groups let one ingredient stand in for another, for example different oils, pastas or stocks. Basic seasoning and baking staples are assumed to be in every kitchen, so a recipe is not blocked by a missing pinch of salt.</p>
+      <h3>Voice input</h3>
+      <p>The phone's speech recognition gives a sentence. My parser splits it into add and remove actions by looking for phrases like "I've got" and "ran out of", so one sentence can do both.</p>
+      <h3>Recipe scraper</h3>
+      <p>A separate Node.js tool collects recipes from three recipe sites into a SQLite database, and Python scripts clean up the images. It has collected 1,829 recipes so far.</p>
+      <h3>App structure</h3>
+      <p>React Native with TypeScript on Expo, bottom-tab and stack navigation, shared state in React context, and data saved on the phone with AsyncStorage.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap prose">
+      <h2>What is not finished</h2>
+      <p>The app still uses the 150 built-in recipes. Moving it to the scraped SQLite database is half done: the loading code exists but is not connected yet. The database is not in the public repository, because the recipes belong to the sites they came from. The account and community screens are placeholders.</p>
+      <h2 class="gap-top">How I used AI</h2>
+      <p>I used Claude Code as a coding assistant for parts of the implementation. I decided what to build, tested every feature on my own phone, and changed it based on what I needed when I actually cooked.</p>
+      <p class="item-links">
+        <a href="/#projects">Back to projects</a>
+        <a href="https://github.com/FearedLynx/MyFridgeApp">Code on GitHub</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="links">
+      <a href="mailto:fkossut.inter@gmail.com">Email</a>
+      <a href="https://github.com/FearedLynx">GitHub</a>
+      <a href="https://www.linkedin.com/in/franciszek-kossut-1967633a8/">LinkedIn</a>
+      <a href="https://elysasecret.com">Team site</a>
+    </p>
+    <p class="mono">Last updated October 2026</p>
+  </div>
+</footer>
+
+<script src="/assets/theme.js"></script>
+</body>
+</html>

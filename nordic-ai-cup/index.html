@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nordic AI Cup 2026 · Franciszek Kossut</title>
+<meta name="description" content="How team Elysa's Secret won the Danish round of the Nordic AI Cup 2026, and what I did on each of the three tasks.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/serif-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-name" href="/">Franciszek Kossut</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/#projects">Projects</a>
+      <a class="nav-extra" href="/#experience">Experience</a>
+      <a class="nav-extra" href="/#tools">Tools</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+    </button>
+    <a class="cv-button" href="/Franciszek_Kossut_CV.pdf" download title="PDF, 154 KB"><span class="cv-long">Download CV</span><span class="cv-short">CV</span><span class="mono">PDF</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="band">
+    <div class="wrap">
+      <a class="back" href="/#nordic-ai-cup">Back to projects</a>
+      <h1>Nordic AI Cup 2026</h1>
+      <p class="lead">Three machine learning tasks in one competition. Our team of four first-year students won the Danish round and finished 2nd in the Nordics.</p>
+    </div>
+  </section>
+
+  <section class="band band-alt" aria-label="Summary">
+    <div class="wrap">
+      <dl class="summary">
+        <dt>Result</dt><dd>1st in Denmark (45.00 points), 2nd in the Nordics (35.97), 0.54 behind Norway</dd>
+        <dt>Team</dt><dd>Elysa's Secret, four first-year students at SDU. First ML competition for all of us.</dd>
+        <dt>My role</dt><dd>Worked on all three tasks. Survival Simulator controller, Drone Flyby box geometry, first Medical pipeline above 0.80.</dd>
+        <dt>When</dt><dd>September 2026. Nordic final in Reykjavík, 14-15 October 2026.</dd>
+        <dt>Tools</dt><dd><ul class="tags"><li>Python</li><li>faster-whisper</li><li>Qwen on vLLM</li><li>DeBERTa</li><li>Ultralytics YOLO11</li><li>CMA-ES</li></ul></dd>
+        <dt>Links</dt><dd class="item-links flush"><a href="https://github.com/emermelada/nordic-ai-cup">Code on GitHub</a><a href="https://elysasecret.com">Team site: Elysa's Secret</a></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap prose">
+      <h2>The competition</h2>
+      <p>The Nordic AI Cup is run by Ambolt AI with DDSA and the Pioneer Centre for AI. More than 430 people registered, and 82 teams reached the final evaluation. Each of the three tasks is ranked as its own competition, and each team gets one evaluation attempt per task, with no resubmission.</p>
+      <p>We won Denmark on balance. Every other team in the Danish top five had one task where it scored close to nothing; we had none. The margin over 2nd place was 6 points.</p>
+    </div>
+  </section>
+
+  <section class="band band-alt" id="medical">
+    <div class="wrap prose">
+      <h2>Medical Appointment</h2>
+      <p class="sub">1st in Denmark · 25 points · score 0.822</p>
+      <p>The input is a recorded conversation between a doctor and a patient. The output is a set of yes/no answers about the appointment, each backed by the exact part of the conversation that supports it. The final evaluation ran once, on 38 conversations nobody had seen.</p>
+      <h3>How it works</h3>
+      <ul>
+        <li>faster-whisper transcribes the audio with a timestamp for every word, so evidence can be pointed to precisely.</li>
+        <li>A Qwen language model served with vLLM reads the transcript and answers each question.</li>
+        <li>Three independently trained DeBERTa models each pick an evidence span, and the final span is the one closest to the other two.</li>
+      </ul>
+      <h3>My part</h3>
+      <p>Medical was Jakub's task. I built the first version of the pipeline that passed 0.80 on validation (0.802, with a smaller 9B Qwen model), then worked with Jakub as he took it to 0.822 on the final evaluation.</p>
+      <div class="lesson">
+        <p><strong>What went wrong.</strong> A change that looked 0.027 better on our own test set scored 0.777 on the official validation. Offline and official scores could disagree by more than the improvements we were chasing, so from then on a change only counted if it beat the frozen version on the official validation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="drone">
+    <div class="wrap prose">
+      <h2>Drone Flyby</h2>
+      <p class="sub">6th in Denmark · 8 points · score 0.263</p>
+      <p>A drone flies over a city. In every one of 249 frames, the model has to find and draw a box around a set of object classes: planes, towers, launchers, vehicles. The score is detection accuracy on a flight nobody had seen.</p>
+      <h3>My part</h3>
+      <p>Our boxes were scored lower than they looked, and a rule to make every box 1.3 times bigger helped without anyone knowing why. I worked out how the official boxes are drawn: each one is the outline of the object's 3D box, rotated with the object and projected through one fixed camera (focal length 3286 px, tilted 71 degrees down). With the ground height estimated for each object, this reproduced the official boxes with a median overlap (IoU) of 0.935. Javier, who led the task, built the final system on that convention.</p>
+      <h3>Result</h3>
+      <p>Our validation mean was 0.584 and the unseen flight scored 0.263, keeping 45% of the score. That was the second-best retention of any team. Teams that scored 0.950 and 0.908 on validation landed at 0.234 and 0.156. What we shipped had only two tuned numbers, both based on how the grader works rather than on the one flight we could see.</p>
+      <div class="lesson">
+        <p><strong>What went wrong.</strong> One setting looked 0.08 better offline and scored worse on the real grader. The more we tuned to the visible flight, the more we lost on the hidden one. Rejecting most of our own per-class tuning is what kept the score.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band-alt" id="survival">
+    <div class="wrap prose">
+      <h2>Survival Simulator</h2>
+      <p class="sub">4th in Denmark · 12 points · score 1405.256</p>
+      <p>A colony of agents lives in a simulated forest. They have to find fruit, breed and avoid predators. The score has two parts: a capped part for how long the colony survives, and an uncapped part for the energy it collects from fruit.</p>
+      <h3>My part</h3>
+      <p>Survival was Alexandru's task. I wrote a separate controller from scratch, without his instructions, and it took our official validation score from 1250 to 1815. One example of what changed: agents now counted who had claimed a camp instead of who was standing near it, which cut how often they switched targets from 9-14 to 3.6 times per agent-minute. Combining my controller with Alexandru's gave our final submission.</p>
+      <p>The final score was the average of three games: 1319.9, 1298.2 and 1599.0.</p>
+      <div class="lesson">
+        <p><strong>What went wrong.</strong> Two Danish teams scored 43,061 and 48,237. We had treated survival time as the whole game, measured the fruit part with our own agents, found it small, and put our ceiling at about 3,240. The fruit part was only small because our agents used the forest up. The uncapped part sets the ceiling, and its size has to be measured with a policy built to exploit it, not with the one you already have.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <p class="item-links flush">
+        <a href="/#projects">Back to projects</a>
+        <a href="https://github.com/emermelada/nordic-ai-cup">Code on GitHub</a>
+        <a href="https://elysasecret.com">Team site: Elysa's Secret</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="links">
+      <a href="mailto:fkossut.inter@gmail.com">Email</a>
+      <a href="https://github.com/FearedLynx">GitHub</a>
+      <a href="https://www.linkedin.com/in/franciszek-kossut-1967633a8/">LinkedIn</a>
+      <a href="https://elysasecret.com">Team site</a>
+    </p>
+    <p class="mono">Last updated October 2026</p>
+  </div>
+</footer>
+
+<script src="/assets/theme.js"></script>
+</body>
+</html>

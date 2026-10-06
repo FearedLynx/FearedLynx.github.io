@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Franciszek Kossut</title>
+<meta name="description" content="AI student at the University of Southern Denmark. National winner of the Nordic AI Cup 2026 (Denmark) with team Elysa's Secret.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/serif-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-name" href="/">Franciszek Kossut</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/#projects">Projects</a>
+      <a class="nav-extra" href="/#experience">Experience</a>
+      <a class="nav-extra" href="/#tools">Tools</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+    </button>
+    <a class="cv-button" href="/Franciszek_Kossut_CV.pdf" download title="PDF, 154 KB"><span class="cv-long">Download CV</span><span class="cv-short">CV</span><span class="mono">PDF</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="band" aria-label="Introduction">
+    <div class="wrap intro">
+      <!-- Photo: save a square photo as /img/photo.webp, then replace the div below with:
+           <img class="photo" src="/img/photo.webp" width="144" height="144" alt="Franciszek Kossut"> -->
+      <div class="photo photo-placeholder" aria-hidden="true">FK</div>
+      <div>
+        <h1>Franciszek Kossut</h1>
+        <p class="role mono">AI student · University of Southern Denmark · Vejle</p>
+        <p class="lead">I build machine learning pipelines in Python, from computer vision to speech and language models, and I run the Linux servers they live on.</p>
+        <p class="links">
+          <a href="mailto:fkossut.inter@gmail.com">fkossut.inter@gmail.com</a>
+          <a href="https://github.com/FearedLynx">GitHub</a>
+          <a href="https://www.linkedin.com/in/franciszek-kossut-1967633a8/">LinkedIn</a>
+          <a href="https://leetcode.com/u/FearedLynx_/">LeetCode</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band-alt" aria-labelledby="achievement-title">
+    <div class="wrap">
+      <div class="highlight">
+        <p class="label mono">Achievement</p>
+        <h2 id="achievement-title">National winner of the Nordic AI Cup 2026, Denmark</h2>
+        <p>With team Elysa's Secret, four first-year students from SDU, I won the Danish round and finished 2nd of all teams in the Nordics, 0.54 points behind the winner from Norway.</p>
+        <ul class="facts" aria-label="Key facts">
+          <li>1st in Denmark, 45.00 points</li>
+          <li>2nd in the Nordics, 35.97</li>
+          <li>82 teams in the final evaluation</li>
+        </ul>
+        <p class="next">Next: the Nordic final in Reykjavík, 14-15 October 2026.</p>
+        <p class="item-links">
+          <a href="#nordic-ai-cup">Read more in Projects</a>
+          <a href="https://elysasecret.com">Team site: Elysa's Secret</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="projects" aria-labelledby="projects-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="projects-title">Projects</h2>
+      </div>
+
+      <article class="panel" id="nordic-ai-cup">
+        <div class="panel-head">
+          <h3>Nordic AI Cup 2026: three ML tasks</h3>
+          <span class="mono">Team of 4 · 2026</span>
+        </div>
+        <p>Three unrelated machine learning problems, each graded on an evaluation run we could not see in advance.</p>
+        <ul class="challenges">
+          <li>
+            <div class="challenge-head"><strong>Medical Appointment</strong><span class="mono">1st in Denmark</span></div>
+            <p>From a recorded appointment to yes/no answers, each backed by the part of the conversation that supports it.</p>
+            <ul class="tags"><li>faster-whisper</li><li>Qwen 27B on vLLM</li><li>DeBERTa</li></ul>
+          </li>
+          <li>
+            <div class="challenge-head"><strong>Drone Flyby</strong><span class="mono">6th in Denmark</span></div>
+            <p>Finding and boxing objects in every frame of a drone flight over a city.</p>
+            <ul class="tags"><li>Ultralytics YOLO11</li><li>camera geometry</li></ul>
+          </li>
+          <li>
+            <div class="challenge-head"><strong>Survival Simulator</strong><span class="mono">4th in Denmark</span></div>
+            <p>A controller for a colony of agents that has to eat, breed and avoid predators.</p>
+            <ul class="tags"><li>Python</li><li>CMA-ES</li><li>bit-exact local simulator</li></ul>
+          </li>
+        </ul>
+        <p class="my-part"><strong>My part.</strong> I worked on all three tasks. On Survival I wrote my own controller from scratch, which took our validation score from 1250 to 1815; combined with Alexandru's version it gave our final result. On Drone Flyby I worked out how the ground-truth boxes were drawn, and on Medical I built the first pipeline that scored above 0.80.</p>
+        <p class="item-links">
+          <a href="/nordic-ai-cup/">Read the write-up</a>
+          <a href="https://github.com/emermelada/nordic-ai-cup">Code on GitHub</a>
+        </p>
+      </article>
+
+      <article class="panel" id="mealplanner">
+        <div class="panel-head">
+          <h3>MealPlanner</h3>
+          <span class="mono">Solo · 2026</span>
+        </div>
+        <p>An Android app I use to plan my meals: calorie tracking, a fridge list that recipes are matched against, voice input, and a shopping list for whatever is missing. 10 screens, 150 built-in recipes, and a scraper that collected 1,829 more.</p>
+        <ul class="tags"><li>TypeScript</li><li>React Native</li><li>Expo</li><li>SQLite</li><li>Node.js</li></ul>
+        <p class="item-links">
+          <a href="/mealplanner/">Read the write-up</a>
+          <a href="https://github.com/FearedLynx/MyFridgeApp">Code on GitHub</a>
+        </p>
+      </article>
+
+      <article class="panel" id="algorithms">
+        <div class="panel-head">
+          <h3>Algorithms and data analysis</h3>
+          <span class="mono">Solo · 2025-2026</span>
+        </div>
+        <p>To prepare for the Polish advanced computer science exam, I worked through every past paper from 2005 to 2025: 33 exam sessions of programming, spreadsheet and database tasks. The core algorithms are written by hand, without library shortcuts.</p>
+        <ul class="challenges">
+          <li>
+            <div class="challenge-head"><strong>Programming</strong><span class="mono">77 Python programs</span></div>
+            <p>Recursion, Euclid's GCD, primality tests and prime factorisation, number systems, string and array processing, Caesar and columnar transposition ciphers, Pascal's triangle, bubble sort and quicksort, Kadane's maximum subarray.</p>
+          </li>
+          <li>
+            <div class="challenge-head"><strong>Spreadsheets</strong><span class="mono">22 Excel workbooks</span></div>
+            <p>Data analysis and simulations with nested IF, SUMIF and COUNTIF, VLOOKUP and INDEX/MATCH, pivot tables and charts.</p>
+          </li>
+          <li>
+            <div class="challenge-head"><strong>Databases</strong><span class="mono">18 Access databases</span></div>
+            <p>Multi-table SQL queries: joins, GROUP BY with COUNT, SUM and AVG, date functions and top-N results.</p>
+          </li>
+        </ul>
+        <ul class="tags"><li>Python</li><li>Excel</li><li>Access</li><li>SQL</li></ul>
+      </article>
+
+      <h3 class="more-title">Smaller projects</h3>
+      <div class="mini-grid">
+        <article class="panel mini">
+          <h4>Spend Ledger</h4>
+          <p class="mono">Solo · 2026</p>
+          <p>A web app for tracking income and expenses in DKK and PLN, synced across devices. Sign-in with per-user data protected by row-level security, recurring entries, a 12-month trend chart, CSV export, and it installs and works offline.</p>
+          <ul class="tags"><li>JavaScript</li><li>Supabase</li><li>PostgreSQL</li><li>PWA</li></ul>
+        </article>
+        <article class="panel mini">
+          <h4>TextTools</h4>
+          <p class="mono">Group of 4 · SDU · in progress</p>
+          <p>A Python text-processing library built as a university group project, with tests that gate each milestone in CI. I own the tokenizer and was the integrator for the first milestone.</p>
+          <ul class="tags"><li>Python</li><li>pytest</li><li>GitLab CI</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band-alt" id="experience" aria-labelledby="experience-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="experience-title">Experience</h2>
+      </div>
+      <ul class="entries">
+        <li>
+          <p class="when mono">Sep 2025 - Sep 2026</p>
+          <div class="body">
+            <h3>3D character artist</h3>
+            <p class="where">Fsski Creations, self-employed</p>
+            <p>Stylised characters modelled, textured and rigged in Blender, prepared separately for resin and FDM printing, with product renders for Kickstarter launches.</p>
+            <ul class="tags"><li>Blender</li></ul>
+          </div>
+        </li>
+        <li>
+          <p class="when mono">Sep 2023 - Jul 2025</p>
+          <div class="body">
+            <h3>Server and website manager</h3>
+            <p class="where">Independent project on OVH Cloud, self-employed</p>
+            <p>Ran a Debian server for an online community with 50+ people online at the same time: security, updates, backups, version migrations and fixing outages, with no one else to call. The server has since been shut down.</p>
+            <ul class="tags"><li>Debian</li><li>Caddy</li><li>Hiawatha</li><li>SSH</li></ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band" id="education" aria-labelledby="education-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="education-title">Education</h2>
+      </div>
+      <ul class="entries">
+        <li>
+          <p class="when mono">2026 - now</p>
+          <div class="body">
+            <h3>B.Sc. in Artificial Intelligence</h3>
+            <p class="where">University of Southern Denmark, Vejle</p>
+          </div>
+        </li>
+        <li>
+          <p class="when mono">Poland</p>
+          <div class="body">
+            <h3>High school, bilingual classes</h3>
+            <p class="where">Piastów. Advanced track in mathematics, computer science and English.</p>
+          </div>
+        </li>
+        <li>
+          <p class="when mono">Languages</p>
+          <div class="body">
+            <p>Polish (native), English (C1, IELTS Academic 7.5), Spanish (basic)</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band band-alt" id="certificates" aria-labelledby="certificates-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="certificates-title">Certificates</h2>
+      </div>
+      <ul class="entries">
+        <li>
+          <p class="when mono">Jul 2026</p>
+          <div class="body">
+            <h3>Career Essentials in Generative AI</h3>
+            <p class="where">Microsoft and LinkedIn Learning, learning path</p>
+            <p>Generative AI, Microsoft Copilot and responsible use of AI.</p>
+          </div>
+        </li>
+        <li>
+          <p class="when mono">Jul 2026</p>
+          <div class="body">
+            <h3>AI Literacy for Everyone</h3>
+            <p class="where">LinkedIn Learning, course</p>
+          </div>
+        </li>
+        <li>
+          <p class="when mono">Feb 2026</p>
+          <div class="body">
+            <h3>IELTS Academic, band 7.5 (C1)</h3>
+            <p class="where">British Council, IDP and Cambridge English</p>
+            <p>Listening 8.0, reading 7.5, writing 7.0, speaking 7.5.</p>
+          </div>
+        </li>
+        <li>
+          <p class="when mono">Oct 2024</p>
+          <div class="body">
+            <h3>Designing in Canva: advanced tools and methods</h3>
+            <p class="where">Sektor 3.0 programme (Polish-American Freedom Foundation and FRSI), online course</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band" id="tools" aria-labelledby="tools-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="tools-title">Tools</h2>
+        <p>Grouped by where I used them.</p>
+      </div>
+      <dl class="tool-groups">
+        <dt>Machine learning</dt>
+        <dd>
+          <ul class="tags"><li>Python</li><li>PyTorch</li><li>Ultralytics YOLO11</li><li>faster-whisper</li><li>vLLM</li><li>Qwen</li><li>DeBERTa</li><li>CMA-ES</li></ul>
+          <p class="used">Used in the <a href="#nordic-ai-cup">Nordic AI Cup</a></p>
+        </dd>
+        <dt>Apps and web</dt>
+        <dd>
+          <ul class="tags"><li>TypeScript</li><li>JavaScript</li><li>React Native</li><li>Expo</li><li>Node.js</li><li>HTML</li><li>CSS</li><li>Supabase</li></ul>
+          <p class="used">Used in <a href="#mealplanner">MealPlanner</a>, Spend Ledger and this site</p>
+        </dd>
+        <dt>Data</dt>
+        <dd>
+          <ul class="tags"><li>SQL</li><li>PostgreSQL</li><li>SQLite</li><li>Excel</li><li>Access</li></ul>
+          <p class="used">Used in <a href="#algorithms">Algorithms and data analysis</a>, MealPlanner and Spend Ledger</p>
+        </dd>
+        <dt>Engineering</dt>
+        <dd>
+          <ul class="tags"><li>Git</li><li>GitHub</li><li>GitLab CI</li><li>pytest</li><li>Docker</li></ul>
+          <p class="used">Used in the <a href="#nordic-ai-cup">Nordic AI Cup</a> and TextTools</p>
+        </dd>
+        <dt>Servers and cloud</dt>
+        <dd>
+          <ul class="tags"><li>Linux (Debian)</li><li>SSH</li><li>Caddy</li><li>Hiawatha</li><li>OVH Cloud</li><li>vast.ai GPUs</li></ul>
+          <p class="used">Used on the <a href="#experience">community server</a> and in the Nordic AI Cup</p>
+        </dd>
+        <dt>AI assistants</dt>
+        <dd>
+          <ul class="tags"><li>Claude Code</li><li>Microsoft Copilot</li></ul>
+          <p class="used">Claude Code used in MealPlanner and the Nordic AI Cup</p>
+        </dd>
+        <dt>Office and design</dt>
+        <dd>
+          <ul class="tags"><li>Microsoft 365 (Word, Excel, PowerPoint)</li><li>Canva</li><li>Blender</li></ul>
+          <p class="used">Blender used at <a href="#experience">Fsski Creations</a></p>
+        </dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="band band-alt" aria-labelledby="outside-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="outside-title">Outside work</h2>
+      </div>
+      <p>I fenced sabre competitively from 2016 to 2025, including international tournaments.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="links">
+      <a href="mailto:fkossut.inter@gmail.com">Email</a>
+      <a href="https://github.com/FearedLynx">GitHub</a>
+      <a href="https://www.linkedin.com/in/franciszek-kossut-1967633a8/">LinkedIn</a>
+      <a href="https://elysasecret.com">Team site</a>
+    </p>
+    <p class="mono">Last updated October 2026</p>
+  </div>
+</footer>
+
+<script src="/assets/theme.js"></script>
+</body>
+</html>
