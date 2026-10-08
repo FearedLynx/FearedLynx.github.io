@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Franciszek Kossut</title>
-<meta name="description" content="AI student at the University of Southern Denmark. National winner of the Nordic AI Cup 2026 (Denmark) with team Elysa's Secret.">
+<meta name="description" content="B.Sc. student in Artificial Intelligence at the University of Southern Denmark. National winner of the Nordic AI Cup 2026 (Denmark) with team Elysa's Secret.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/serif-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css">
@@ -33,12 +33,9 @@
 
   <section class="band" aria-label="Introduction">
     <div class="wrap intro">
-      <!-- Photo: save a square photo as /img/photo.webp, then replace the div below with:
-           <img class="photo" src="/img/photo.webp" width="144" height="144" alt="Franciszek Kossut"> -->
-      <div class="photo photo-placeholder" aria-hidden="true">FK</div>
       <div>
         <h1>Franciszek Kossut</h1>
-        <p class="role mono">AI student · University of Southern Denmark · Vejle</p>
+        <p class="role mono">B.Sc. student in Artificial Intelligence · University of Southern Denmark · Vejle</p>
         <p class="lead">I build machine learning pipelines in Python, from computer vision to speech and language models, and I run the Linux servers they live on.</p>
         <p class="links">
           <a href="mailto:fkossut.inter@gmail.com">fkossut.inter@gmail.com</a>
@@ -72,11 +69,26 @@
 
   <section class="band" id="projects" aria-labelledby="projects-title">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head carousel-head">
         <h2 id="projects-title">Projects</h2>
+        <div class="carousel-controls" hidden>
+          <button class="carousel-arrow" type="button" data-dir="-1" aria-label="Previous project" aria-controls="project-track">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+          <span class="carousel-count mono" aria-hidden="true"><span class="carousel-current">1</span> / <span class="carousel-total">5</span></span>
+          <button class="carousel-arrow" type="button" data-dir="1" aria-label="Next project" aria-controls="project-track">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
       </div>
+    </div>
 
-      <article class="panel" id="nordic-ai-cup">
+    <!-- Outside .wrap so the neighbouring projects can show on both sides -->
+    <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Projects">
+      <div class="wrap"><nav class="carousel-tabs" aria-label="Jump to project" hidden></nav></div>
+      <div class="carousel-track" id="project-track" tabindex="0">
+
+      <article class="panel slide" id="nordic-ai-cup" data-title="Nordic AI Cup">
         <div class="panel-head">
           <h3>Nordic AI Cup 2026: three ML tasks</h3>
           <span class="mono">Team of 4 · 2026</span>
@@ -100,26 +112,26 @@
           </li>
         </ul>
         <p class="my-part"><strong>My part.</strong> I worked on all three tasks. On Survival I wrote my own controller from scratch, which took our validation score from 1250 to 1815; combined with Alexandru's version it gave our final result. On Drone Flyby I worked out how the ground-truth boxes were drawn, and on Medical I built the first pipeline that scored above 0.80.</p>
-        <p class="item-links">
-          <a href="/nordic-ai-cup/">Read the write-up</a>
+        <p class="slide-actions">
+          <a class="button" href="/nordic-ai-cup/">Read the write-up <span aria-hidden="true">→</span></a>
           <a href="https://github.com/emermelada/nordic-ai-cup">Code on GitHub</a>
         </p>
       </article>
 
-      <article class="panel" id="mealplanner">
+      <article class="panel slide" id="mealplanner" data-title="MealPlanner">
         <div class="panel-head">
           <h3>MealPlanner</h3>
           <span class="mono">Solo · 2026</span>
         </div>
         <p>An Android app I use to plan my meals: calorie tracking, a fridge list that recipes are matched against, voice input, and a shopping list for whatever is missing. 10 screens, 150 built-in recipes, and a scraper that collected 1,829 more.</p>
         <ul class="tags"><li>TypeScript</li><li>React Native</li><li>Expo</li><li>SQLite</li><li>Node.js</li></ul>
-        <p class="item-links">
-          <a href="/mealplanner/">Read the write-up</a>
+        <p class="slide-actions">
+          <a class="button" href="/mealplanner/">Read the write-up <span aria-hidden="true">→</span></a>
           <a href="https://github.com/FearedLynx/MyFridgeApp">Code on GitHub</a>
         </p>
       </article>
 
-      <article class="panel" id="algorithms">
+      <article class="panel slide" id="algorithms" data-title="Algorithms">
         <div class="panel-head">
           <h3>Algorithms and data analysis</h3>
           <span class="mono">Solo · 2025-2026</span>
@@ -142,20 +154,24 @@
         <ul class="tags"><li>Python</li><li>Excel</li><li>Access</li><li>SQL</li></ul>
       </article>
 
-      <h3 class="more-title">Smaller projects</h3>
-      <div class="mini-grid">
-        <article class="panel mini">
-          <h4>Spend Ledger</h4>
-          <p class="mono">Solo · 2026</p>
-          <p>A web app for tracking income and expenses in DKK and PLN, synced across devices. Sign-in with per-user data protected by row-level security, recurring entries, a 12-month trend chart, CSV export, and it installs and works offline.</p>
-          <ul class="tags"><li>JavaScript</li><li>Supabase</li><li>PostgreSQL</li><li>PWA</li></ul>
-        </article>
-        <article class="panel mini">
-          <h4>TextTools</h4>
-          <p class="mono">Group of 4 · SDU · in progress</p>
-          <p>A Python text-processing library built as a university group project, with tests that gate each milestone in CI. I own the tokenizer and was the integrator for the first milestone.</p>
-          <ul class="tags"><li>Python</li><li>pytest</li><li>GitLab CI</li></ul>
-        </article>
+      <article class="panel slide" id="spend-ledger" data-title="Spend Ledger">
+        <div class="panel-head">
+          <h3>Spend Ledger</h3>
+          <span class="mono">Solo · 2026</span>
+        </div>
+        <p>A web app for tracking income and expenses in DKK and PLN, synced across devices. Sign-in with per-user data protected by row-level security, recurring entries, a 12-month trend chart, CSV export, and it installs and works offline.</p>
+        <ul class="tags"><li>JavaScript</li><li>Supabase</li><li>PostgreSQL</li><li>PWA</li></ul>
+      </article>
+
+      <article class="panel slide" id="texttools" data-title="TextTools">
+        <div class="panel-head">
+          <h3>TextTools</h3>
+          <span class="mono">Group of 4 · SDU · in progress</span>
+        </div>
+        <p>A Python text-processing library built as a university group project, with tests that gate each milestone in CI. I own the tokenizer and was the integrator for the first milestone.</p>
+        <ul class="tags"><li>Python</li><li>pytest</li><li>GitLab CI</li></ul>
+      </article>
+
       </div>
     </div>
   </section>
@@ -328,5 +344,6 @@
 </footer>
 
 <script src="/assets/theme.js"></script>
+<script src="/assets/projects.js"></script>
 </body>
 </html>

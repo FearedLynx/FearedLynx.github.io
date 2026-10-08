@@ -5,8 +5,7 @@
   if (!button) return;
 
   function current() {
-    if (root.dataset.theme) return root.dataset.theme;
-    return matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    return root.dataset.theme || "light";
   }
 
   function label() {

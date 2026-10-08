@@ -11,7 +11,7 @@
 /*
   Warm (light): #FCF0DA cream, #AEAC78 olive, #F2C46A mustard, #4C4541 brown
   Dark:         near-black base, with #0F2854 navy, #1C4D8D blue, #4988C4 mid blue, #BDE8F5 ice as accents
-  Warm is the default. Dark follows the device unless the visitor picked a theme.
+  Warm is the default. Dark only when the visitor picks it with the theme switch.
 */
 :root {
   color-scheme: light;
@@ -63,33 +63,6 @@
   --button-text: #0f2854;
   --tag-bg: #0f2854;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --bg: #0b0d10;
-    --band: #111419;
-    --panel: #151a21;
-    --panel-border: #24303f;
-    --text: #e2e8ed;
-    --heading: #f4f8fa;
-    --muted: #9ba7b3;
-    --rule: #222a34;
-    --line: #4988c4;
-    --link-hover-bg: #1c4d8d;
-    --link-hover-text: #ffffff;
-    --hl-bg: #0f2854;
-    --hl-border: #1c4d8d;
-    --hl-muted: #bde8f5;
-    --header-bg: #050608;
-    --header-text: #f4f8fa;
-    --header-nav: #aab5c0;
-    --button-bg: #bde8f5;
-    --button-hover: #dff4fa;
-    --button-text: #0f2854;
-    --tag-bg: #0f2854;
-  }
-}
-
 /* Base */
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-padding-top: 5rem; }
@@ -164,12 +137,8 @@ a:hover { background: var(--link-hover-bg); color: var(--link-hover-text); text-
 
 /* Intro */
 .intro { display: flex; gap: 2.25rem; align-items: flex-start; }
+/* Ready for a photo: <img class="photo" src="/img/photo.webp" width="144" height="144" alt="..."> before the text */
 .photo { flex: none; width: 144px; height: 144px; border-radius: 6px; object-fit: cover; }
-.photo-placeholder {
-  display: grid; place-items: center;
-  background: var(--panel); border: 1px dashed var(--line);
-  color: var(--muted); font: 500 1.25rem var(--mono);
-}
 h1 { font-size: 2.5rem; letter-spacing: -0.01em; }
 .role { margin-top: 0.35rem; color: var(--muted); }
 .intro .lead { margin-top: 1.1rem; font-size: 1.1875rem; }
@@ -216,16 +185,68 @@ h1 { font-size: 2.5rem; letter-spacing: -0.01em; }
 .my-part { margin-top: 1.25rem; }
 .my-part strong { color: var(--heading); }
 
-/* Smaller projects */
-.more-title { font-size: 1.1875rem; margin: 2.75rem 0 1rem; }
-.mini-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.25rem; }
-.mini { padding: 1.5rem; display: flex; flex-direction: column; }
-.mini + .mini { margin-top: 0; }
-.mini h4 { font-size: 1.0625rem; font-weight: 600; color: var(--heading); margin: 0; line-height: 1.3; }
-.mini .mono { color: var(--muted); font-size: 0.8125rem; }
-.mini > p:not(.mono) { margin-top: 0.6rem; font-size: 1rem; line-height: 1.6; }
-.mini .tags { margin-top: auto; padding-top: 1rem; }
-.mini .item-links { margin-top: 0.75rem; font-size: 1rem; }
+/* Filled button, used for the main link of a project */
+.button {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.55rem 1.1rem; border-radius: 4px;
+  background: var(--button-bg); color: var(--button-text);
+  font-weight: 600; font-size: 1rem; text-decoration: none; white-space: nowrap;
+}
+.button:hover { background: var(--button-hover); color: var(--button-text); }
+.button span { transition: transform 150ms; }
+.button:hover span { transform: translateX(3px); }
+.slide-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.5rem; margin-top: 1.75rem; }
+
+/* Projects carousel. Without the script it is a plain horizontal scroller with snap points. */
+.carousel-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+.carousel-controls { display: flex; align-items: center; gap: 0.5rem; }
+.carousel-controls[hidden] { display: none; }
+.carousel-count { color: var(--muted); min-width: 3.5rem; text-align: center; }
+.carousel-arrow {
+  display: grid; place-items: center;
+  width: 2.5rem; height: 2.5rem; padding: 0;
+  border: 1px solid var(--panel-border); border-radius: 50%;
+  background: var(--panel); color: var(--heading); cursor: pointer;
+}
+.carousel-arrow:hover:not(:disabled) { background: var(--link-hover-bg); color: var(--link-hover-text); border-color: var(--link-hover-bg); }
+.carousel-arrow:disabled { opacity: 0.35; cursor: default; }
+.carousel-arrow svg { width: 1.1rem; height: 1.1rem; }
+
+.carousel-tabs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem; }
+.carousel-tabs[hidden] { display: none; }
+.carousel-tabs button {
+  font: 400 0.8125rem var(--mono); color: var(--text);
+  padding: 0.25rem 0.65rem; border: 1px solid var(--panel-border); border-radius: 999px;
+  background: none; cursor: pointer;
+}
+.carousel-tabs button:hover { border-color: var(--line); }
+.carousel-tabs button[aria-current="true"] { background: var(--button-bg); color: var(--button-text); border-color: var(--button-bg); }
+
+/* The track spans the full window. The current project is centred at the width of the page
+   column, and its neighbours show on both sides: in the margins on wide screens, and as
+   at least --peek on narrow ones. */
+.carousel { container-type: inline-size; --peek: max(3rem, 8cqw); --gap: 1.25rem; }
+.carousel .slide { flex: 0 0 min(51rem, 100cqw - 2 * var(--peek)); }
+.carousel-track {
+  padding-inline: calc((100cqw - min(51rem, 100cqw - 2 * var(--peek))) / 2);
+  display: flex; align-items: flex-start; gap: var(--gap);
+  overflow-x: auto; overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+.ready .carousel-track { transition: height 300ms ease; }
+.carousel-track::-webkit-scrollbar { display: none; }
+.carousel-track:focus-visible { outline-offset: 4px; }
+.js-carousel .carousel-track { cursor: grab; }
+.carousel-track.dragging { cursor: grabbing; user-select: none; scroll-snap-type: none; }
+.carousel-track.dragging a { pointer-events: none; }
+.slide { min-width: 0; scroll-snap-align: center; transition: opacity 300ms; }
+.panel.slide + .panel.slide { margin-top: 0; }
+.js-carousel .slide:not(.active) { opacity: 0.5; }
+@media (prefers-reduced-motion: reduce) {
+  .ready .carousel-track, .slide, .button span { transition: none; }
+}
 
 /* Experience, education: a dated list */
 .entries { list-style: none; padding: 0; }
@@ -302,6 +323,10 @@ h1 + .lead { margin-top: 0.75rem; font-size: 1.1875rem; max-width: 42rem; }
   .highlight, .panel { padding: 1.5rem 1.25rem; }
   .highlight h2, .section-head h2 { font-size: 1.5rem; }
   .panel-head, .challenge-head { flex-direction: column; gap: 0; }
+  .panel-head .mono { white-space: normal; }
+  .carousel { --peek: 2.75rem; --gap: 0.75rem; }
+  .carousel-tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-right: -1rem; padding-right: 1rem; }
+  .carousel-tabs button { flex: none; }
 }
 @media (max-width: 360px) {
   .site-nav { display: none; }
