@@ -73,7 +73,7 @@
           <button class="carousel-arrow" type="button" data-dir="-1" aria-label="Previous project" aria-controls="project-track">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
           </button>
-          <span class="carousel-count mono" aria-hidden="true"><span class="carousel-current">1</span> / <span class="carousel-total">5</span></span>
+          <span class="carousel-count mono" aria-hidden="true"><span class="carousel-current">1</span> / <span class="carousel-total">6</span></span>
           <button class="carousel-arrow" type="button" data-dir="1" aria-label="Next project" aria-controls="project-track">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
           </button>
@@ -113,6 +113,28 @@
         <p class="slide-actions">
           <a class="button" href="/nordic-ai-cup/">Read the write-up <span aria-hidden="true">→</span></a>
           <a href="https://github.com/emermelada/nordic-ai-cup">Code on GitHub</a>
+        </p>
+      </article>
+
+      <article class="panel slide" id="listing-agent" data-title="Listing agent">
+        <div class="panel-head">
+          <h3>Product listing agent (MCP)</h3>
+          <span class="mono">Solo · 2026</span>
+        </div>
+        <p>An AI agent for an online shop. My MCP server gives Claude six tools over a product catalogue: products, four weeks of sales with the trend and weeks of stock left, the brand voice guide, a draft checker, and saving. The agent writes product listings, checks them, fixes what failed and only then saves.</p>
+        <ul class="challenges">
+          <li>
+            <div class="challenge-head"><strong>Rules, not hope</strong><span class="mono">12 rules</span></div>
+            <p>The brand guide is turned into automatic checks: length limits, materials and age range mentioned, no invented certifications, no safety promises or hype. The save tool refuses anything that fails and says why, so the agent can correct itself.</p>
+          </li>
+          <li>
+            <div class="challenge-head"><strong>Tested on every push</strong><span class="mono">13 test cases</span></div>
+            <p>A fixed test set proves each rule catches its mistake, and an end-to-end test talks to the server over the real MCP protocol. GitHub Actions runs both.</p>
+          </li>
+        </ul>
+        <ul class="tags"><li>Python</li><li>MCP</li><li>Claude</li><li>pytest</li><li>GitHub Actions</li></ul>
+        <p class="slide-actions">
+          <a class="button" href="https://github.com/FearedLynx/product-listing-agent-mcp">Code on GitHub <span aria-hidden="true">→</span></a>
         </p>
       </article>
 
@@ -296,18 +318,18 @@
         </dd>
         <dt>Engineering</dt>
         <dd>
-          <ul class="tags"><li>Git</li><li>GitHub</li><li>GitLab CI</li><li>pytest</li><li>Docker</li></ul>
-          <p class="used">Used in the <a href="#nordic-ai-cup">Nordic AI Cup</a> and TextTools</p>
+          <ul class="tags"><li>Git</li><li>GitHub</li><li>GitHub Actions</li><li>GitLab CI</li><li>pytest</li><li>Docker</li></ul>
+          <p class="used">Used in the <a href="#nordic-ai-cup">Nordic AI Cup</a>, the listing agent and TextTools</p>
         </dd>
         <dt>Servers and cloud</dt>
         <dd>
           <ul class="tags"><li>Linux (Debian)</li><li>SSH</li><li>Caddy</li><li>Hiawatha</li><li>OVH Cloud</li><li>vast.ai GPUs</li></ul>
           <p class="used">Used on the <a href="#experience">community server</a> and in the Nordic AI Cup</p>
         </dd>
-        <dt>AI assistants</dt>
+        <dt>AI and agents</dt>
         <dd>
-          <ul class="tags"><li>Claude Code</li><li>Microsoft Copilot</li></ul>
-          <p class="used">Claude Code used in MealPlanner and the Nordic AI Cup</p>
+          <ul class="tags"><li>Claude Code</li><li>MCP servers</li><li>Microsoft Copilot</li></ul>
+          <p class="used">MCP in the <a href="#listing-agent">product listing agent</a>, Claude Code in MealPlanner and the Nordic AI Cup</p>
         </dd>
         <dt>Office and design</dt>
         <dd>
