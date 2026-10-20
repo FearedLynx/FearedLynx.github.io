@@ -288,6 +288,7 @@ h1 + .lead { margin-top: 0.75rem; font-size: 1.1875rem; max-width: 42rem; }
 .prose strong { color: var(--heading); font-weight: 600; }
 .shot { margin: 1.5rem 0 0; }
 .shot img { display: block; width: 100%; max-width: 300px; height: auto; border: 1px solid var(--panel-border); border-radius: 6px; }
+.shot.wide img { max-width: 100%; }
 .shot figcaption { margin-top: 0.5rem; color: var(--muted); font-size: 0.9375rem; }
 .lesson { margin-top: 1.25rem; padding: 1.25rem 1.5rem; background: var(--hl-bg); border: 1px solid var(--hl-border); border-radius: 6px; }
 .lesson p:first-child { margin-top: 0; }
@@ -331,3 +332,14 @@ h1 + .lead { margin-top: 0.75rem; font-size: 1.1875rem; max-width: 42rem; }
 @media (max-width: 360px) {
   .site-nav { display: none; }
 }
+
+/* Make-a-Ring write-up: the four colour themes */
+.theme-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 1.25rem; margin-top: 1.5rem; }
+.theme { margin: 0; }
+.theme img { display: block; width: 100%; height: auto; border: 1px solid var(--panel-border); border-radius: 6px; }
+.theme figcaption { margin-top: 0.5rem; font-size: 0.9375rem; color: var(--muted); }
+.theme figcaption strong { color: var(--heading); }
+.theme .codes { display: block; margin-top: 0.15rem; font-size: 0.75rem; }
+.swatches { display: inline-flex; gap: 3px; margin-right: 0.45rem; vertical-align: -2px; }
+.swatch { width: 14px; height: 14px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18); }
+@media (max-width: 600px) { .theme-grid { grid-template-columns: 1fr; } }
