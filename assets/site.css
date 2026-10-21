@@ -9,33 +9,34 @@
 @font-face { font-family: "IBM Plex Mono"; font-weight: 500; font-display: swap; src: url("fonts/mono-500-latin-ext.woff2") format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
 
 /*
-  Warm (light): #FCF0DA cream, #AEAC78 olive, #F2C46A mustard, #4C4541 brown
-  Dark:         near-black base, with #0F2854 navy, #1C4D8D blue, #4988C4 mid blue, #BDE8F5 ice as accents
-  Warm is the default. Dark only when the visitor picks it with the theme switch.
+  Light (paper and ink): #FAFAF8 paper, #1B1B1B ink, #E5482D vermilion as the one accent
+         (#D43D20 behind white text, for contrast)
+  Dark:  near-black base, with #0F2854 navy, #1C4D8D blue, #4988C4 mid blue, #BDE8F5 ice as accents
+  Light is the default. Dark only when the visitor picks it with the theme switch.
 */
 :root {
   color-scheme: light;
-  --bg: #fcf0da;
-  --band: #f5e4c3;
-  --panel: #fff8eb;
-  --panel-border: #d9d3a8;
-  --text: #4c4541;
-  --heading: #3b3532;
-  --muted: #605e37;
-  --rule: #ded6b0;
-  --line: #aeac78;
-  --link-hover-bg: #f2c46a;
-  --link-hover-text: #3b3532;
-  --hl-bg: #f9e1b3;
-  --hl-border: #f2c46a;
-  --hl-muted: #5a5833;
-  --header-bg: #4c4541;
-  --header-text: #fcf0da;
-  --header-nav: #e3d8c2;
-  --button-bg: #f2c46a;
-  --button-hover: #e8b44e;
-  --button-text: #3b3532;
-  --tag-bg: #ddd5b3;
+  --bg: #fafaf8;
+  --band: #f1f1ee;
+  --panel: #ffffff;
+  --panel-border: #e0e0db;
+  --text: #1b1b1b;
+  --heading: #000000;
+  --muted: #66665f;
+  --rule: #e4e4df;
+  --line: #e5482d;
+  --link-hover-bg: #d43d20;
+  --link-hover-text: #ffffff;
+  --hl-bg: #fff0eb;
+  --hl-border: #f2b3a2;
+  --hl-muted: #b3321b;
+  --header-bg: #111111;
+  --header-text: #ffffff;
+  --header-nav: #c9c9c4;
+  --button-bg: #d43d20;
+  --button-hover: #b8321a;
+  --button-text: #ffffff;
+  --tag-bg: #eeeeea;
   --serif: "Source Serif 4", Georgia, serif;
   --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
 }
