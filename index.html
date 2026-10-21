@@ -25,7 +25,7 @@
       <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
       <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
     </button>
-    <a class="cv-button" href="/Franciszek_Kossut_CV.pdf" download title="PDF, 154 KB"><span class="cv-long">Download CV</span><span class="cv-short">CV</span><span class="mono">PDF</span></a>
+    <a class="cv-button" href="/Franciszek_Kossut_CV.pdf" download title="PDF, 72 KB"><span class="cv-long">Download CV</span><span class="cv-short">CV</span><span class="mono">PDF</span></a>
   </div>
 </header>
 
@@ -52,13 +52,11 @@
       <div class="highlight">
         <p class="label mono">Achievement</p>
         <h2 id="achievement-title">National winner of the Nordic AI Cup 2026, Denmark</h2>
-        <p>With team Elysa's Secret, four first-year students from SDU, I won the Danish round and finished 2nd of all teams in the Nordics, 0.54 points behind the winner from Norway.</p>
+        <p>With team Elysa's Secret, four first-year students from SDU, I won the Danish round of the competition.</p>
         <ul class="facts" aria-label="Key facts">
           <li>1st in Denmark, 45.00 points</li>
-          <li>2nd in the Nordics, 35.97</li>
           <li>82 teams in the final evaluation</li>
         </ul>
-        <p class="next">Next: the Nordic final in Reykjavík, 14-15 October 2026.</p>
         <p class="item-links">
           <a href="#nordic-ai-cup">Read more in Projects</a>
           <a href="https://elysasecret.com">Team site: Elysa's Secret</a>
@@ -75,7 +73,7 @@
           <button class="carousel-arrow" type="button" data-dir="-1" aria-label="Previous project" aria-controls="project-track">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
           </button>
-          <span class="carousel-count mono" aria-hidden="true"><span class="carousel-current">1</span> / <span class="carousel-total">5</span></span>
+          <span class="carousel-count mono" aria-hidden="true"><span class="carousel-current">1</span> / <span class="carousel-total">6</span></span>
           <button class="carousel-arrow" type="button" data-dir="1" aria-label="Next project" aria-controls="project-track">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
           </button>
@@ -118,6 +116,53 @@
         </p>
       </article>
 
+      <article class="panel slide" id="make-a-ring" data-title="Make-a-Ring">
+        <div class="panel-head">
+          <h3>Make-a-Ring: a ring design studio</h3>
+          <span class="mono">My idea · team of 2 · 2026</span>
+        </div>
+        <p>A ring designer in the browser for people who are not jewellers: scroll patterns around a live 3D ring, draw your own tile and watch it wrap the band, try the ring on a hand at your real size, and download a print-ready STL or OBJ file.</p>
+        <ul class="challenges">
+          <li>
+            <div class="challenge-head"><strong>Real files, real limits</strong><span class="mono">10 materials</span></div>
+            <p>Wall thickness and detail size are checked against each material, with one-click fixes, before the file is generated in the browser.</p>
+          </li>
+          <li>
+            <div class="challenge-head"><strong>Designed as a drawing</strong><span class="mono">8-page brand guide</span></div>
+            <p>Grid, dimension lines and a title block for every ring, with written rules for type, colour, controls, motion and sound.</p>
+          </li>
+        </ul>
+        <p class="my-part"><strong>My part.</strong> The idea and the first working version were mine, built on my own. I then led the design and interaction: the studio layout, the pattern editor, saved designs, the size step, motion, sound and the brand rules. Javier built the background rendering, the 3D try-on hand and the phone layout.</p>
+        <ul class="tags"><li>JavaScript</li><li>Preact</li><li>three.js</li><li>Web Audio</li></ul>
+        <p class="slide-actions">
+          <a class="button" href="/make-a-ring/">Read the write-up <span aria-hidden="true">→</span></a>
+          <a href="https://make-a-ring.deployxa.online">Try it live</a>
+          <a href="https://github.com/FearedLynx/make-a-ring">Code on GitHub</a>
+        </p>
+      </article>
+
+      <article class="panel slide" id="listing-agent" data-title="Listing agent">
+        <div class="panel-head">
+          <h3>Product listing agent (MCP)</h3>
+          <span class="mono">Solo · 2026</span>
+        </div>
+        <p>An AI agent for an online shop. My MCP server gives Claude six tools over a product catalogue: products, four weeks of sales with the trend and weeks of stock left, the brand voice guide, a draft checker, and saving. The agent writes product listings, checks them, fixes what failed and only then saves.</p>
+        <ul class="challenges">
+          <li>
+            <div class="challenge-head"><strong>Rules, not hope</strong><span class="mono">12 rules</span></div>
+            <p>The brand guide is turned into automatic checks: length limits, materials and age range mentioned, no invented certifications, no safety promises or hype. The save tool refuses anything that fails and says why, so the agent can correct itself.</p>
+          </li>
+          <li>
+            <div class="challenge-head"><strong>Tested on every push</strong><span class="mono">18 test cases</span></div>
+            <p>A fixed test set proves each rule catches its mistake and that harmless words like "imperfections" are not flagged, and an end-to-end test talks to the server over the real MCP protocol. GitHub Actions runs both.</p>
+          </li>
+        </ul>
+        <ul class="tags"><li>Python</li><li>MCP</li><li>Claude</li><li>pytest</li><li>GitHub Actions</li></ul>
+        <p class="slide-actions">
+          <a class="button" href="https://github.com/FearedLynx/product-listing-agent-mcp">Code on GitHub <span aria-hidden="true">→</span></a>
+        </p>
+      </article>
+
       <article class="panel slide" id="mealplanner" data-title="MealPlanner">
         <div class="panel-head">
           <h3>MealPlanner</h3>
@@ -136,7 +181,7 @@
           <h3>Algorithms and data analysis</h3>
           <span class="mono">Solo · 2025-2026</span>
         </div>
-        <p>To prepare for the Polish advanced computer science exam, I worked through every past paper from 2005 to 2025: 33 exam sessions of programming, spreadsheet and database tasks. The core algorithms are written by hand, without library shortcuts.</p>
+        <p>A set of more than 75 algorithmic and data problems, solved in Python, Excel and Access. The core algorithms are written by hand, without library shortcuts.</p>
         <ul class="challenges">
           <li>
             <div class="challenge-head"><strong>Programming</strong><span class="mono">77 Python programs</span></div>
@@ -298,18 +343,18 @@
         </dd>
         <dt>Engineering</dt>
         <dd>
-          <ul class="tags"><li>Git</li><li>GitHub</li><li>GitLab CI</li><li>pytest</li><li>Docker</li></ul>
-          <p class="used">Used in the <a href="#nordic-ai-cup">Nordic AI Cup</a> and TextTools</p>
+          <ul class="tags"><li>Git</li><li>GitHub</li><li>GitHub Actions</li><li>GitLab CI</li><li>pytest</li><li>Docker</li></ul>
+          <p class="used">Used in the <a href="#nordic-ai-cup">Nordic AI Cup</a>, the listing agent and TextTools</p>
         </dd>
         <dt>Servers and cloud</dt>
         <dd>
           <ul class="tags"><li>Linux (Debian)</li><li>SSH</li><li>Caddy</li><li>Hiawatha</li><li>OVH Cloud</li><li>vast.ai GPUs</li></ul>
           <p class="used">Used on the <a href="#experience">community server</a> and in the Nordic AI Cup</p>
         </dd>
-        <dt>AI assistants</dt>
+        <dt>AI and agents</dt>
         <dd>
-          <ul class="tags"><li>Claude Code</li><li>Microsoft Copilot</li></ul>
-          <p class="used">Claude Code used in MealPlanner and the Nordic AI Cup</p>
+          <ul class="tags"><li>Claude Code</li><li>MCP servers</li><li>Microsoft Copilot</li></ul>
+          <p class="used">MCP in the <a href="#listing-agent">product listing agent</a>, Claude Code in MealPlanner and the Nordic AI Cup</p>
         </dd>
         <dt>Office and design</dt>
         <dd>

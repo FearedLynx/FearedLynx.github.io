@@ -289,6 +289,7 @@ h1 + .lead { margin-top: 0.75rem; font-size: 1.1875rem; max-width: 42rem; }
 .prose strong { color: var(--heading); font-weight: 600; }
 .shot { margin: 1.5rem 0 0; }
 .shot img { display: block; width: 100%; max-width: 300px; height: auto; border: 1px solid var(--panel-border); border-radius: 6px; }
+.shot.wide img { max-width: 100%; }
 .shot figcaption { margin-top: 0.5rem; color: var(--muted); font-size: 0.9375rem; }
 .lesson { margin-top: 1.25rem; padding: 1.25rem 1.5rem; background: var(--hl-bg); border: 1px solid var(--hl-border); border-radius: 6px; }
 .lesson p:first-child { margin-top: 0; }
