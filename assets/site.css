@@ -179,6 +179,12 @@ h1 { font-size: 2.5rem; letter-spacing: -0.01em; }
 .panel-head h3 { font-size: 1.375rem; }
 .panel-head .mono { color: var(--muted); white-space: nowrap; }
 .panel > p { margin-top: 0.75rem; }
+/* one picture per project, all 16:9 so the slides line up */
+.slide-shot { margin: 1rem 0 0; }
+.slide-shot img {
+  display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover;
+  border: 1px solid var(--panel-border); border-radius: 4px; background: #0b0d10;
+}
 .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; list-style: none; padding: 0; }
 .tags li { font-family: var(--mono); font-size: 0.8125rem; padding: 0.15rem 0.55rem; background: var(--tag-bg); border-radius: 4px; }
 .item-links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; margin-top: 1.25rem; }
