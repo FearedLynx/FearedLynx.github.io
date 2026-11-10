@@ -181,6 +181,14 @@ h1 { font-size: 2.5rem; letter-spacing: -0.01em; }
 .panel > p { margin-top: 0.75rem; }
 /* one picture per project, all 16:9 so the slides line up */
 .slide-shot { margin: 1rem 0 0; }
+/* write-up pages: the project's picture beside the title, kept small */
+.page-top { display: grid; gap: 1.5rem; align-items: center; }
+@media (min-width: 52rem) { .page-top { grid-template-columns: 1fr 24rem; gap: 2.5rem; } }
+.top-shot { margin: 0; max-width: 24rem; }
+.top-shot img {
+  display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover;
+  border: 1px solid var(--panel-border); border-radius: 4px; background: #0b0d10;
+}
 .slide-shot img {
   display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover;
   border: 1px solid var(--panel-border); border-radius: 4px; background: #0b0d10;
