@@ -7,7 +7,7 @@
 <meta name="description" content="Make-a-Ring, a ring design studio in the browser: scroll patterns, draw your own, try it on a hand and download a print-ready file. My idea, and the 1st place winner of the HyperBloom October 2026 UI/UX hackathon.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/serif-400-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v=20261110">
+<link rel="stylesheet" href="/assets/site.css?v=20261110b">
 <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
 <body>
@@ -39,7 +39,7 @@
           <h1>Make-a-Ring</h1>
           <p class="lead">A ring design studio for people who are not jewellers. You scroll patterns, draw your own, see the ring on a hand at your real size, and leave with a file a 3D printer or a casting house can use.</p>
         </div>
-        <figure class="top-shot"><img src="/img/makearing-studio.webp" width="288" height="162" alt="The Make-a-Ring studio: a 3D ring in the middle surrounded by pattern cards, with the pattern library and size settings at the sides."></figure>
+        <figure class="top-shot"><a class="zoom" href="/img/makearing-studio.webp"><img src="/img/makearing-studio.webp" width="448" height="252" alt="The Make-a-Ring studio: a 3D ring in the middle surrounded by pattern cards, with the pattern library and size settings at the sides."></a></figure>
       </div>
     </div>
   </section>
@@ -63,7 +63,7 @@
       <p>Custom rings are designed in CAD programs made for professionals, or picked from a short list of presets. I wanted someone with an idea for a ring to be able to try it, see it at their real size and hand a maker a file that works, without learning CAD.</p>
       <p>The idea was mine, and so was the first working version: the cross-shaped pattern carousel around a live 3D ring, the templates, the try-on and the file export. I built it on my own before the team work started.</p>
       <figure class="shot wide">
-        <img src="/img/makearing-landing.webp" width="1200" height="750" alt="Make-a-Ring landing page: a large MAKE A RING wordmark with a silver 3D ring crossing it, dimension lines and a title block listing the ring's layout, material, size and price." loading="lazy">
+        <a class="zoom" href="/img/makearing-landing.webp"><img src="/img/makearing-landing.webp" width="1200" height="750" alt="Make-a-Ring landing page: a large MAKE A RING wordmark with a silver 3D ring crossing it, dimension lines and a title block listing the ring's layout, material, size and price." loading="lazy"></a>
         <figcaption>The landing page, styled as a technical drawing: grid, dimension lines and a title block for the ring on show.</figcaption>
       </figure>
     </div>
@@ -80,7 +80,7 @@
         <li><strong>Check and download:</strong> printability checks with each material's real limits (wall thickness, detail size, seamless wrap) and one-click fixes, an itemised cost estimate, and STL or OBJ files generated in the browser.</li>
       </ul>
       <figure class="shot wide">
-        <img src="/img/makearing-tryon.webp" width="1200" height="800" alt="Try-on screen: a silver ring on the ring finger of a 3D hand, with skin tone, hand shape, finger and material options on the right." loading="lazy">
+        <a class="zoom" href="/img/makearing-tryon.webp"><img src="/img/makearing-tryon.webp" width="1200" height="800" alt="Try-on screen: a silver ring on the ring finger of a 3D hand, with skin tone, hand shape, finger and material options on the right." loading="lazy"></a>
         <figcaption>Try-on, with the ring drawn at its real size.</figcaption>
       </figure>
     </div>
@@ -100,7 +100,7 @@
       </ul>
       <p><a href="https://github.com/emermelada">Javier Arevalo</a> joined for the hackathon. He moved the 3D ring building into a background thread so the page stays smooth, built the 3D try-on hand and the phone layout, and handled the deployment. We reviewed and merged each other's work.</p>
       <figure class="shot wide">
-        <img src="/img/makearing-review.webp" width="1200" height="800" alt="Files screen: the 3D ring with its dimensions and a title block of specs on the left; on the right a download card, printability checks and the cost estimate." loading="lazy">
+        <a class="zoom" href="/img/makearing-review.webp"><img src="/img/makearing-review.webp" width="1200" height="800" alt="Files screen: the 3D ring with its dimensions and a title block of specs on the left; on the right a download card, printability checks and the cost estimate." loading="lazy"></a>
         <figcaption>The last step: the files first, then the checks and the cost.</figcaption>
       </figure>
       <p class="item-links">
@@ -126,5 +126,6 @@
 </footer>
 
 <script src="/assets/theme.js"></script>
+<script src="/assets/zoom.js"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@
 <meta name="description" content="PHAROS, built at the European Defense Tech Hackathon in Copenhagen 2026: five small uncrewed boats guard undersea cables together, with no boat in charge and one operator approving what matters. I built the evaluation, the map data and the pitch.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/serif-400-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v=20261110">
+<link rel="stylesheet" href="/assets/site.css?v=20261110b">
 <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
 <body>
@@ -39,7 +39,7 @@
           <h1>PHAROS</h1>
           <p class="lead">A swarm brain for small patrol boats that guard undersea cables, and the shore console that keeps one watch officer in charge. Built in one weekend at the European Defense Tech Hackathon in Copenhagen.</p>
         </div>
-        <figure class="top-shot"><img src="/img/pharos-console.webp" width="288" height="162" alt="The PHAROS console: five boats over the Great Belt cables, the fleet on the left, alerts on the right and an event timeline below."></figure>
+        <figure class="top-shot"><a class="zoom" href="/img/pharos-console.webp"><img src="/img/pharos-console.webp" width="448" height="252" alt="The PHAROS console: five boats over the Great Belt cables, the fleet on the left, alerts on the right and an event timeline below."></a></figure>
       </div>
     </div>
   </section>
@@ -77,7 +77,7 @@
         <li><strong>The real sea:</strong> the real Great Belt coastline, cables, shipping lane, seabed depth and tide, with a day of real ship traffic replayed.</li>
       </ul>
       <figure class="shot wide">
-        <img src="/img/pharos-relay.webp" width="1200" height="675" alt="The relay boat has been switched off and the banner says another boat was elected as the new relay." loading="lazy">
+        <a class="zoom" href="/img/pharos-relay.webp"><img src="/img/pharos-relay.webp" width="1200" height="675" alt="The relay boat has been switched off and the banner says another boat was elected as the new relay." loading="lazy"></a>
         <figcaption>The relay boat goes silent. Another boat takes over the relay and the cable sweep goes on.</figcaption>
       </figure>
     </div>
@@ -95,7 +95,7 @@
       </ul>
       <p>The swarm agent was built by <a href="https://github.com/emermelada">Javier Arevalo</a>, the shore service and console by <a href="https://github.com/zytzev">Alexandru Zaitzev</a>, and the simulator and 3D view by <a href="https://github.com/SimeDev42">Simeone</a>, who joined the team for this hackathon.</p>
       <figure class="shot wide">
-        <img src="/img/pharos-drift.webp" width="1200" height="675" alt="The console zoomed in on a drifting boat, with the banner Motors off, sensors on." loading="lazy">
+        <a class="zoom" href="/img/pharos-drift.webp"><img src="/img/pharos-drift.webp" width="1200" height="675" alt="The console zoomed in on a drifting boat, with the banner Motors off, sensors on." loading="lazy"></a>
         <figcaption>Motors off, sensors on: pickets drift with the tide and correct only when pushed off station.</figcaption>
       </figure>
       <p class="item-links">
@@ -121,5 +121,6 @@
 </footer>
 
 <script src="/assets/theme.js"></script>
+<script src="/assets/zoom.js"></script>
 </body>
 </html>

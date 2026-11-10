@@ -180,15 +180,38 @@ h1 { font-size: 2.5rem; letter-spacing: -0.01em; }
 .panel-head .mono { color: var(--muted); white-space: nowrap; }
 .panel > p { margin-top: 0.75rem; }
 /* one picture per project, all 16:9 so the slides line up */
-.slide-shot { margin: 1rem 0 0; max-width: 26rem; }
-/* write-up pages: the project's picture beside the title, kept small */
-.page-top { display: grid; gap: 1.25rem; align-items: center; }
-@media (min-width: 48rem) { .page-top { grid-template-columns: 1fr 18rem; gap: 2.5rem; } }
-.top-shot { margin: 0; max-width: 18rem; }
+.slide-shot { margin: 1rem 0 0; }
+/* write-up pages: the project's picture beside the title, click to zoom */
+.page-top { display: grid; gap: 1.5rem; align-items: center; }
+@media (min-width: 52rem) { .page-top { grid-template-columns: 1fr 28rem; gap: 2.5rem; } }
+.top-shot { margin: 0; max-width: 28rem; }
 .top-shot img {
   display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover;
   border: 1px solid var(--panel-border); border-radius: 4px; background: #0b0d10;
 }
+.top-shot figcaption { margin-top: 0.4rem; color: var(--muted); font-size: 0.875rem; }
+
+/* Click to zoom: a link to the full image, opened in a dialog when JS runs */
+a.zoom { display: block; position: relative; cursor: zoom-in; background: none; border-radius: 4px; }
+a.zoom:hover { background: none; }
+a.zoom::after {
+  content: ""; position: absolute; right: 0.5rem; bottom: 0.5rem; width: 1.9rem; height: 1.9rem;
+  border-radius: 50%; background: rgba(11, 13, 16, 0.75) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='6'/%3E%3Cpath d='M20 20l-4.5-4.5M11 8.5v5M8.5 11h5'/%3E%3C/svg%3E") center / 1.1rem no-repeat;
+  opacity: 0.85; transition: opacity 150ms;
+}
+a.zoom:hover::after, a.zoom:focus-visible::after { opacity: 1; }
+.zoom-dialog {
+  max-width: min(96vw, 1400px); max-height: 94vh; padding: 0; border: 0; border-radius: 6px;
+  background: #0b0d10; overflow: visible;
+}
+.zoom-dialog::backdrop { background: rgba(0, 0, 0, 0.85); }
+.zoom-dialog img { display: block; max-width: min(96vw, 1400px); max-height: 88vh; width: auto; height: auto; cursor: zoom-out; border-radius: 6px; }
+.zoom-dialog p { margin: 0; padding: 0.6rem 0.9rem; color: #c9d1d9; font-size: 0.9375rem; background: #0b0d10; border-radius: 0 0 6px 6px; }
+.zoom-close {
+  position: absolute; top: -0.9rem; right: -0.9rem; width: 2.2rem; height: 2.2rem; border-radius: 50%;
+  border: 1px solid #3a4450; background: #151a21; color: #fff; font-size: 1.25rem; line-height: 1; cursor: pointer;
+}
+@media (max-width: 40rem) { .zoom-close { top: 0.4rem; right: 0.4rem; } }
 .slide-shot img {
   display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover;
   border: 1px solid var(--panel-border); border-radius: 4px; background: #0b0d10;
