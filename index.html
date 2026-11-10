@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Franciszek Kossut</title>
-<meta name="description" content="B.Sc. student in Artificial Intelligence at the University of Southern Denmark. National winner of the Nordic AI Cup 2026 (Denmark) with team Elysa's Secret.">
+<meta name="description" content="B.Sc. student in Artificial Intelligence at the University of Southern Denmark. Winner of the HyperBloom October 2026 hackathon with Make-a-Ring, and national winner of the Nordic AI Cup 2026 (Denmark) with team Elysa's Secret.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/serif-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css">
@@ -47,21 +47,38 @@
     </div>
   </section>
 
-  <section class="band band-alt" aria-labelledby="achievement-title">
+  <section class="band band-alt" aria-labelledby="achievements-title">
     <div class="wrap">
-      <div class="highlight">
-        <p class="label mono">Achievement</p>
-        <h2 id="achievement-title">National winner of the Nordic AI Cup 2026, Denmark</h2>
-        <p>With team Elysa's Secret, four first-year students from SDU, I won the Danish round of the competition.</p>
-        <ul class="facts" aria-label="Key facts">
-          <li>1st in Denmark, 45.00 points</li>
-          <li>82 teams in the final evaluation</li>
-        </ul>
-        <p class="item-links">
-          <a href="#nordic-ai-cup">Read more in Projects</a>
-          <a href="https://elysasecret.com">Team site: Elysa's Secret</a>
-        </p>
+      <h2 class="visually-hidden" id="achievements-title">Achievements</h2>
+      <div class="achievements">
+        <div class="highlight">
+          <p class="label mono">1st place · October 2026</p>
+          <h3>Winner of HyperBloom October 2026</h3>
+          <p>A UI/UX and web design hackathon on Devpost. Make-a-Ring, my ring design studio, took first place out of every project submitted.</p>
+          <ul class="facts" aria-label="Key facts">
+            <li>1st of 239 projects</li>
+            <li>738 participants</li>
+          </ul>
+          <p class="item-links">
+            <a href="#make-a-ring">Read more in Projects</a>
+            <a href="https://devpost.com/software/make-a-ring">Devpost entry</a>
+          </p>
+        </div>
+        <div class="highlight">
+          <p class="label mono">1st in Denmark · September 2026</p>
+          <h3>National winner of the Nordic AI Cup 2026, Denmark</h3>
+          <p>With team Elysa's Secret, four students from SDU, I won the Danish round of the competition.</p>
+          <ul class="facts" aria-label="Key facts">
+            <li>1st in Denmark, 45.00 points</li>
+            <li>82 teams in the final evaluation</li>
+          </ul>
+          <p class="item-links">
+            <a href="#nordic-ai-cup">Read more in Projects</a>
+            <a href="https://elysasecret.com">Team site: Elysa's Secret</a>
+          </p>
+        </div>
       </div>
+      <p class="also">Also competed at the <strong>European Defense Tech Hackathon, Copenhagen</strong> (November 2026, 100+ hackers), where we built <a href="#pharos">PHAROS</a>, a swarm brain for small patrol boats that guard undersea cables.</p>
     </div>
   </section>
 
@@ -73,7 +90,7 @@
           <button class="carousel-arrow" type="button" data-dir="-1" aria-label="Previous project" aria-controls="project-track">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
           </button>
-          <span class="carousel-count mono" aria-hidden="true"><span class="carousel-current">1</span> / <span class="carousel-total">7</span></span>
+          <span class="carousel-count mono" aria-hidden="true"><span class="carousel-current">1</span> / <span class="carousel-total">8</span></span>
           <button class="carousel-arrow" type="button" data-dir="1" aria-label="Next project" aria-controls="project-track">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
           </button>
@@ -119,7 +136,7 @@
       <article class="panel slide" id="make-a-ring" data-title="Make-a-Ring">
         <div class="panel-head">
           <h3>Make-a-Ring: a ring design studio</h3>
-          <span class="mono">My idea · team of 2 · 2026</span>
+          <span class="mono">1st place, HyperBloom · team of 2 · 2026</span>
         </div>
         <p>A ring designer in the browser for people who are not jewellers: scroll patterns around a live 3D ring, draw your own tile and watch it wrap the band, try the ring on a hand at your real size, and download a print-ready STL or OBJ file.</p>
         <ul class="challenges">
@@ -132,12 +149,36 @@
             <p>Grid, dimension lines and a title block for every ring, with written rules for type, colour, controls, motion and sound.</p>
           </li>
         </ul>
-        <p class="my-part"><strong>My part.</strong> The idea and the first working version were mine, built on my own. I then led the design and interaction: the studio layout, the pattern editor, saved designs, the size step, motion, sound and the brand rules. Javier built the background rendering, the 3D try-on hand and the phone layout.</p>
+        <p class="my-part"><strong>My part.</strong> The idea and the first working version were mine, built on my own. I then led the design and interaction: the studio layout, the pattern editor, saved designs, the size step, motion, sound and the brand rules. Javier built the background rendering, the 3D try-on hand and the phone layout. It won first place at HyperBloom October 2026, out of 239 projects.</p>
         <ul class="tags"><li>JavaScript</li><li>Preact</li><li>three.js</li><li>Web Audio</li></ul>
         <p class="slide-actions">
           <a class="button" href="/make-a-ring/">Read the write-up <span aria-hidden="true">→</span></a>
           <a href="https://make-a-ring.deployxa.online">Try it live</a>
           <a href="https://github.com/FearedLynx/make-a-ring">Code on GitHub</a>
+        </p>
+      </article>
+
+      <article class="panel slide" id="pharos" data-title="PHAROS">
+        <div class="panel-head">
+          <h3>PHAROS: a swarm of patrol boats</h3>
+          <span class="mono">EDTH Copenhagen · team of 4 · 2026</span>
+        </div>
+        <p>Built in one weekend at the European Defense Tech Hackathon for challenge 07, swarm coordination: five small uncrewed boats guard the undersea cables in the Great Belt with no boat in charge. They share out the work by auction, take over when a boat runs low or goes silent, and wait for the one operator on shore before doing anything beyond watching.</p>
+        <ul class="challenges">
+          <li>
+            <div class="challenge-head"><strong>Measured against the truth</strong><span class="mono">30 paired seeds</span></div>
+            <p>An evaluator that sees what really happened scores every run. With repair on, less cable was left unwatched in all 30 seeded runs, and no boat went below its battery reserve.</p>
+          </li>
+          <li>
+            <div class="challenge-head"><strong>The real Great Belt</strong><span class="mono">open data</span></div>
+            <p>The real coastline, cables, shipping lane and seabed depth, a satellite image for the map and a day of real ship traffic.</p>
+          </li>
+        </ul>
+        <p class="my-part"><strong>My part.</strong> I built the evaluation: the metrics, the warm-up runner and the paired scorecard that compares three modes on identical inputs. I also made the map data (coastline, Sentinel-2 image, depth contours) and wrote the pitch script and the slides.</p>
+        <ul class="tags"><li>Python</li><li>pytest</li><li>uv</li><li>Sentinel-2</li><li>EMODnet bathymetry</li></ul>
+        <p class="slide-actions">
+          <a class="button" href="/pharos/">Read the write-up <span aria-hidden="true">→</span></a>
+          <a href="https://github.com/elysassecret/EDTH_07">Code on GitHub</a>
         </p>
       </article>
 
@@ -344,7 +385,7 @@
         <dt>Engineering</dt>
         <dd>
           <ul class="tags"><li>Git</li><li>GitHub</li><li>GitHub Actions</li><li>GitLab CI</li><li>pytest</li><li>Docker</li></ul>
-          <p class="used">Used in the <a href="#nordic-ai-cup">Nordic AI Cup</a>, the listing agent and TextTools</p>
+          <p class="used">Used in the <a href="#nordic-ai-cup">Nordic AI Cup</a>, <a href="#pharos">PHAROS</a>, the listing agent and TextTools</p>
         </dd>
         <dt>Servers and cloud</dt>
         <dd>
@@ -384,7 +425,7 @@
       <a href="https://www.linkedin.com/in/franciszek-kossut-1967633a8/">LinkedIn</a>
       <a href="https://elysasecret.com">Team site</a>
     </p>
-    <p class="mono">Last updated October 2026</p>
+    <p class="mono">Last updated November 2026</p>
   </div>
 </footer>
 

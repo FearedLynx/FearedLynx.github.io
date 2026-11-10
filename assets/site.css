@@ -145,16 +145,24 @@ h1 { font-size: 2.5rem; letter-spacing: -0.01em; }
 .intro .lead { margin-top: 1.1rem; font-size: 1.1875rem; }
 .links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; margin-top: 1.25rem; }
 
-/* Achievement */
+/* Achievements: two equal cards side by side, stacked on narrow screens */
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.achievements { display: grid; gap: 1.25rem; }
+@media (min-width: 56rem) { .achievements { grid-template-columns: 1fr 1fr; } }
 .highlight {
   background: var(--hl-bg);
   border: 1px solid var(--hl-border);
   border-radius: 6px;
   padding: 2rem 2.25rem;
+  display: flex;
+  flex-direction: column;
 }
 .highlight .label { color: var(--hl-muted); }
-.highlight h2 { font-size: 1.75rem; margin-top: 0.35rem; }
-.highlight h2 + p, .highlight p + p { margin-top: 0.85rem; }
+.highlight h2, .highlight h3 { font-size: 1.5rem; margin-top: 0.35rem; }
+.highlight h2 + p, .highlight h3 + p, .highlight p + p { margin-top: 0.85rem; }
+/* links pinned to the bottom, so the two cards' links line up */
+.highlight .item-links { margin-top: auto; padding-top: 1.25rem; }
+.also { margin-top: 1.5rem; color: var(--muted); }
 .facts { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; list-style: none; padding: 0; }
 .facts li { font-family: var(--mono); font-size: 0.875rem; padding: 0.2rem 0.6rem; border: 1px solid var(--hl-border); border-radius: 4px; }
 .next { color: var(--hl-muted); margin-top: 1.25rem; }
