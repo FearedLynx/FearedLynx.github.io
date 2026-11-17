@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FocusLens · Franciszek Kossut</title>
+<meta name="description" content="FocusLens, built by team Elysa's Secret at Junction 2026 for Meta's AI glasses challenge: tap when your mind drifts, and hear what you just missed and your next step.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/serif-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css?v=20261117d">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-name" href="/">Franciszek Kossut</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/#projects">Projects</a>
+      <a class="nav-extra" href="/#experience">Experience</a>
+      <a class="nav-extra" href="/#tools">Tools</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+    </button>
+    <a class="cv-button" href="/Franciszek_Kossut_CV.pdf" download title="PDF, 77 KB"><span class="cv-long">Download CV</span><span class="cv-short">CV</span><span class="mono">PDF</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="band">
+    <div class="wrap">
+      <div class="page-top">
+        <div>
+          <a class="back" href="/#junction">Back to Junction 2026</a>
+          <h1>FocusLens</h1>
+          <p class="lead">Your brain took a break. Your glasses didn't. FocusLens runs on Meta's AI glasses: when your mind drifts in a lecture or a meeting, tap, and hear what you just missed and your next step. Built by my team at Junction 2026 for Meta's challenge.</p>
+        </div>
+        <figure class="top-shot"><a class="zoom" href="/img/junction-spread.webp"><img src="/img/junction-spread.webp" width="448" height="252" alt="The Junction 2026 poster: Botticelli's Birth of Venus with the words European Tech Renaissance, Nov 13-15th 2026, Espoo, Finland."></a></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band-alt" aria-label="Summary">
+    <div class="wrap">
+      <dl class="summary">
+        <dt>Role</dt><dd>Team project of Elysa's Secret. I worked on <a href="/spreadbot/">Spreadbot</a> at the same event</dd>
+        <dt>When</dt><dd>13 to 15 November 2026, on site in Espoo, Finland</dd>
+        <dt>Event</dt><dd>Junction 2026 in Espoo, Europe's biggest hackathon, with challenges set by Google DeepMind, OpenAI, Meta, NVIDIA, Intel, AstraZeneca, AfterQuery, Arduino and 20+ more companies. Challenge: AI Glasses for Everyone, Everyday, by Meta</dd>
+        <dt>Tools</dt><dd><ul class="tags"><li>Meta Ray-Ban Display</li><li>Meta Neural Band</li><li>Wearables Device Access Toolkit</li><li>Flutter</li><li>Kotlin</li><li>Next.js</li><li>Gemini</li></ul></dd>
+        <dt>Links</dt><dd class="item-links flush"><a href="https://youtu.be/PRIiMyFB0Xg">Video</a><a href="https://lens.projectviridis.dev/g">Live demo</a><a href="https://github.com/imbreaszaboccs-star/Meta_glasses">Code on GitHub</a><a href="https://files.hackjunction.app/presentations/45/a92a6c30-4e26-47e3-9836-85abf5bc78f4.pptx">Slides</a></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="video-title">
+    <div class="wrap prose">
+      <h2 id="video-title">Video</h2>
+      <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/PRIiMyFB0Xg" title="FocusLens video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      <p class="video-note"><a href="https://youtu.be/PRIiMyFB0Xg">Watch on YouTube</a></p>
+    </div>
+  </section>
+
+  <section class="band band-alt">
+    <div class="wrap prose">
+      <h2>The idea</h2>
+      <p>Built for people with ADHD or dyslexia, and for anyone overwhelmed. When attention slips in a lecture or a meeting, the thread is usually gone, and taking out a phone to catch up makes it worse. FocusLens brings the help to the moment of distraction, without a phone in your hand.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap prose">
+      <h2>How it works</h2>
+      <ul>
+        <li><strong>Always ready, nothing kept:</strong> the phone in your pocket holds only the last couple of minutes of audio in memory.</li>
+        <li><strong>One gesture:</strong> a pinch on the Meta Neural Band (or a tap) makes the glasses take one photo of what you see.</li>
+        <li><strong>One AI call:</strong> photo and audio go to a small backend, where a Gemini model returns what you missed and one concrete next step.</li>
+        <li><strong>Back in your view:</strong> the answer appears on the glasses' display, or is read aloud on glasses without one, and a short context card is saved for later.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band band-alt">
+    <div class="wrap prose">
+      <h2>Credits</h2>
+      <p>Built by my teammates <a href="https://github.com/sebastian28ai">sebastian28ai</a> and <a href="https://github.com/imbreaszaboccs-star">imbreaszaboccs-star</a> on GitHub, for team Elysa's Secret.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap prose">
+      <p class="item-links">
+        <a href="/#junction">Back to Junction 2026</a>
+        <a href="https://youtu.be/PRIiMyFB0Xg">Video on YouTube</a>
+        <a href="https://lens.projectviridis.dev/g">Live demo</a>
+        <a href="https://github.com/imbreaszaboccs-star/Meta_glasses">Code on GitHub</a>
+      </p>
+      <p class="other-projects mono">Our other Junction 2026 projects: <a href="/spreadbot/">Spreadbot</a> · <a href="/oncall/">OnCall</a> · <a href="/suokuulo/">SuoKuulo</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="links">
+      <a href="mailto:fkossut.inter@gmail.com">Email</a>
+      <a href="https://github.com/FearedLynx">GitHub</a>
+      <a href="https://www.linkedin.com/in/franciszek-kossut-1967633a8/">LinkedIn</a>
+      <a href="https://elysasecret.com">Team site</a>
+    </p>
+    <p class="mono">Last updated November 2026</p>
+  </div>
+</footer>
+
+<script src="/assets/theme.js"></script>
+<script src="/assets/zoom.js"></script>
+</body>
+</html>

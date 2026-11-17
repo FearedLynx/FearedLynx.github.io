@@ -148,7 +148,7 @@ h1 { font-size: 2.5rem; letter-spacing: -0.01em; }
 /* Achievements: two equal cards side by side, stacked on narrow screens */
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .achievements { display: grid; gap: 1.25rem; }
-@media (min-width: 56rem) { .achievements { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 56rem) { .achievements { grid-template-columns: 1fr 1fr; } .highlight.wide { grid-column: 1 / -1; } }
 .highlight {
   background: var(--hl-bg);
   border: 1px solid var(--hl-border);
@@ -158,6 +158,8 @@ h1 { font-size: 2.5rem; letter-spacing: -0.01em; }
   flex-direction: column;
 }
 .highlight .label { color: var(--hl-muted); }
+.partners { margin-top: 1rem; font-weight: 600; letter-spacing: 0.01em; }
+.partners .mono { font-weight: 400; font-size: 0.8125rem; color: var(--hl-muted); }
 .highlight h2, .highlight h3 { font-size: 1.5rem; margin-top: 0.35rem; }
 .highlight h2 + p, .highlight h3 + p, .highlight p + p { margin-top: 0.85rem; }
 /* links pinned to the bottom, so the two cards' links line up */
@@ -378,3 +380,15 @@ h1 + .lead { margin-top: 0.75rem; font-size: 1.1875rem; max-width: 42rem; }
 @media (max-width: 360px) {
   .site-nav { display: none; }
 }
+
+/* write-up pages: embedded video */
+.video { position: relative; aspect-ratio: 16 / 9; margin: 1.25rem 0 0; background: #0b0d10; border: 1px solid var(--panel-border); border-radius: 4px; overflow: hidden; }
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-note { margin-top: 0.5rem; font-size: 0.9375rem; }
+.other-projects { margin-top: 1.5rem; font-size: 0.875rem; }
+.other-projects a { margin: 0 0.15rem; }
+
+/* experience: small company logo beside the role */
+.entry-head { display: flex; gap: 0.875rem; align-items: center; }
+.entry-head h3 { margin: 0; }
+.entry-logo { flex: none; width: 40px; height: 40px; border-radius: 8px; }

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spreadbot · Franciszek Kossut</title>
+<meta name="description" content="Spreadbot, my project at Junction 2026: a bot that runs a car-transport company for one simulated week, live, for Bahn Express's Spread challenge. 16th in the live final, 6th of 57 in a ranking round.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/serif-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css?v=20261117d">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-name" href="/">Franciszek Kossut</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/#projects">Projects</a>
+      <a class="nav-extra" href="/#experience">Experience</a>
+      <a class="nav-extra" href="/#tools">Tools</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+    </button>
+    <a class="cv-button" href="/Franciszek_Kossut_CV.pdf" download title="PDF, 77 KB"><span class="cv-long">Download CV</span><span class="cv-short">CV</span><span class="mono">PDF</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="band">
+    <div class="wrap">
+      <div class="page-top">
+        <div>
+          <a class="back" href="/#junction">Back to Junction 2026</a>
+          <h1>Spreadbot</h1>
+          <p class="lead">A bot that runs a car-transport company for one simulated week, live, against every other team. My challenge at Junction 2026, set by Bahn Express.</p>
+        </div>
+        <figure class="top-shot"><a class="zoom" href="/img/junction-spread-final.webp"><img src="/img/junction-spread-final.webp" width="448" height="252" alt="The final leaderboard of Bahn Express's Spread: Juhus first with €22,931, Evil Club 10th with €19,084, Elysa's Secret 16th with €18,423."></a></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band-alt" aria-label="Summary">
+    <div class="wrap">
+      <dl class="summary">
+        <dt>Role</dt><dd>My challenge. Javier Arévalo Hernández and I started it together; from Saturday morning I ran it, directing a team of Claude Code agents</dd>
+        <dt>When</dt><dd>13 to 15 November 2026, on site in Espoo, Finland</dd>
+        <dt>Event</dt><dd>Junction 2026 in Espoo, Europe's biggest hackathon, with challenges set by Google DeepMind, OpenAI, Meta, NVIDIA, Intel, AstraZeneca, AfterQuery, Arduino and 20+ more companies. Challenge: Spread, by Bahn Express</dd>
+        <dt>Result</dt><dd>16th in the live final: €18,423 at 96.7% on time, €661 short of the top 10. Before that, 6th of 57 in a ranking round, and 9th of 75 and 4th of 41 in the two test finals</dd>
+        <dt>Tools</dt><dd><ul class="tags"><li>Python 3</li><li>gradient-boosted trees</li><li>Claude Code</li><li>Gemini</li><li>A/B testing on fixed seeds</li></ul></dd>
+        <dt>Links</dt><dd class="item-links flush"><a href="https://youtu.be/1q8kELOUgoc">Video</a><a href="https://github.com/emermelada/bahn-junction2026">Code on GitHub</a></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="video-title">
+    <div class="wrap prose">
+      <h2 id="video-title">Video</h2>
+      <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/1q8kELOUgoc" title="Spreadbot video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      <p class="video-note"><a href="https://youtu.be/1q8kELOUgoc">Watch on YouTube</a></p>
+    </div>
+  </section>
+
+  <section class="band band-alt">
+    <div class="wrap prose">
+      <h2>The problem</h2>
+      <p>Bahn moves cars for car dealers, and a freelance driver drives each car on its own wheels. Spread is that work as a simulated week in Finland. A dealer asks us for a price and asks a hidden competitor too: quote too high and we lose the car. Each car we win is posted as a gig in the drivers' app, at a fee we choose: pay too little and no driver takes it in time.</p>
+      <p>The score is the margin, what dealers pay minus what drivers are paid, and at least 90% of cars must arrive on time. Every team plays the same week, live, on one leaderboard.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap prose">
+      <h2>How it decides</h2>
+      <ul>
+        <li><strong>Quote:</strong> the price that maximises the chance of winning times the margin left after the fee and the late risk. The competitor's level is learned live, per day, dealer and lane.</li>
+        <li><strong>Late risk:</strong> gradient-boosted trees trained on 804,000 past orders predict whether a car will be late (held-out AUC 0.90), and the risk is priced into every quote.</li>
+        <li><strong>One fee per gig:</strong> read off a measured booking curve, anchored on the drive time, because drivers price the drive, not the list fee.</li>
+        <li><strong>Gigs that end near home:</strong> two cars are paired into one gig when it ends close to where drivers live; those get booked far more often.</li>
+        <li><strong>Guards for the bad week:</strong> no long drives after warnings, and a late barrier that makes an expected late car more expensive as the week's on-time share drops.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band band-alt">
+    <div class="wrap prose">
+      <h2>How I worked</h2>
+      <p>I ran several Claude Code sessions in parallel, each on one idea, with handoffs written by Gemini and Gemma. Every idea sat behind a switch, so it could be measured with and without on the same simulated weeks, including weeks it was never tuned on. An idea was merged only if it won.</p>
+      <ul>
+        <li>Pricing the late risk: +€2,076 per week on 12 unseen weeks.</li>
+        <li>Gigs that end near home: +€400 to €600 per week on two unseen sets.</li>
+        <li>One fee per gig from the booking curve: +€383 and +€541 per week on two unseen sets.</li>
+        <li>The guards cost about €300 per week, but all 72 unseen weeks stayed above 90% on time.</li>
+        <li>What lost: cheaper prices to win more cars, a looser late barrier, direct offers to drivers, three- and four-car gigs.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap prose">
+      <h2>The final</h2>
+      <p>We were 6th going into the last game-day. Then the other teams booked €1,500 to €2,000 each on their last-day cars. Our bot had a guard that holds those cars back to protect the on-time share in risky weeks, so it had little left to book.</p>
+      <p>We finished 16th with €18,423, our best live week, at 96.7% on time with every car delivered. Places 4 to 16 were within €1,550; we were €661 short of the top 10, who went on to the jury. A safety margin is a bet: in risky weeks it saved us, and in this one it cost us the jury.</p>
+    </div>
+  </section>
+
+  <section class="band band-alt">
+    <div class="wrap prose">
+      <p class="item-links">
+        <a href="/#junction">Back to Junction 2026</a>
+        <a href="https://youtu.be/1q8kELOUgoc">Video on YouTube</a>
+        <a href="https://github.com/emermelada/bahn-junction2026">Code on GitHub</a>
+      </p>
+      <p class="other-projects mono">Our other Junction 2026 projects: <a href="/oncall/">OnCall</a> · <a href="/suokuulo/">SuoKuulo</a> · <a href="/focuslens/">FocusLens</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="links">
+      <a href="mailto:fkossut.inter@gmail.com">Email</a>
+      <a href="https://github.com/FearedLynx">GitHub</a>
+      <a href="https://www.linkedin.com/in/franciszek-kossut-1967633a8/">LinkedIn</a>
+      <a href="https://elysasecret.com">Team site</a>
+    </p>
+    <p class="mono">Last updated November 2026</p>
+  </div>
+</footer>
+
+<script src="/assets/theme.js"></script>
+<script src="/assets/zoom.js"></script>
+</body>
+</html>
