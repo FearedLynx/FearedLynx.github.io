@@ -1,0 +1,3 @@
+[submodule "make-a-ring/app"]
+	path = make-a-ring/app
+	url = https://github.com/FearedLynx/make-a-ring.git
